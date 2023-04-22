@@ -644,56 +644,61 @@
 <a name="Teaching" id='Teaching'></a>
 <section id="teaching-area" class="sections">
     <div class="container">
-        <!-- Example row of columns -->
         <div class="row">
             <div class="col-sm-12 col-sm-12 col-xs-12">
+                <div class="pie-chart-container">
+                    <canvas id="myPieChart"></canvas>
+                </div>
                 <div class="portfolio">
-                   <p>Current courses at Leiden University</p>
-                    <ul>
-                       <li><span class="publications">Machine Learning (since 2020), <a
-                                href="https://studiegids.universiteitleiden.nl/en/courses/109040/machine-learning">Study Guide</a></span>
-                        </li>
-                        <li><span class="publications">Urban Computing (since 2018), <a href="https://urbancomputing2021.github.io/">Website</a>, <a href="https://studiegids.universiteitleiden.nl/en/courses/105088/urban-computing">Study Guide</a></span></li>
-
-
-                        <li><span class="publications">Research Methods in Computer Science (since 2020), <a
-                                href="https://studiegids.universiteitleiden.nl/en/courses/109139/research-methods-in-computer-science">Study Guide</a></span>
-                        </li>
-                      
-                       
-                    </ul> 
-                     <p>Past courses at Leiden University</p>
-                    <ul>
-                          <li><span class="publications">Software Engineering (2017-2018), <a
-                                href="https://studiegids.universiteitleiden.nl/en/courses/81251/software-engineering-ictibps">Study Guide</a></span></li>
-
-                        <li><span class="publications">Seminar Business Information Systems (2017-2018), <a
-                                href="https://studiegids.universiteitleiden.nl/en/courses/85301/seminar-business-information-systems">Study Guide</a></span>
-                        </li>
-                       
-                    </ul> 
-
-                      
-                  <p>Past courses at University of Twente</p>
-                    <ul>
-                         <li><span class="publications">Data Visualization (2016)</span></li>
-                        <li><span class="publications">Mobile and Wireless Networks (2015-2016)</span></li>
-                         <li><span class="publications">Advanced Mobile and Wireless Networks (2015-2016)</span></li>
-
-                    </ul>  
-                
-                 
-                 
-                   
-
-                    
-
+                    <h2>Teaching</h2>
                 </div>
             </div>
-
         </div>
     </div> <!-- /container -->
 </section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    var ctx = document.getElementById('myPieChart').getContext('2d');
+    var myPieChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['Machine Learning', 'Image Processing', 'Data Analysis', 'Signal Processing'],
+            datasets: [{
+                label: 'Percentage',
+                data: [45, 30, 15, 10],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.5)',
+                    'rgba(54, 162, 235, 0.5)',
+                    'rgba(255, 206, 86, 0.5)',
+                    'rgba(75, 192, 192, 0.5)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            legend: {
+                position: 'right',
+            },
+            title: {
+                display: true,
+                text: 'Areas of Expertise'
+            },
+            animation: {
+                animateScale: true,
+                animateRotate: true
+            }
+        }
+    });
+</script>
 
 <div class="container">
                             <span class="authors">Design based on the<a
