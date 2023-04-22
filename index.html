@@ -643,91 +643,130 @@
 
 <a name="Teaching" id='Teaching'></a>
 <section id="teaching-area" class="sections">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 col-sm-12 col-xs-12">
-                <div class="pie-chart-container">
-                    <canvas id="myPieChart"></canvas>
-                </div>
-                <div class="portfolio">
-                    <h2>My Interests</h2>
-                </div>
-            </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-sm-12 col-xs-12">
+        <div id="pie-chart-container"></div>
+        <div class="portfolio">
+          <h2>My Interests</h2>
         </div>
-    </div> <!-- /container -->
+      </div>
+    </div>
+  </div>
 </section>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/variable-pie.js"></script>
 <script>
-    var ctx = document.getElementById('myPieChart').getContext('2d');
-    var myPieChart = new Chart(ctx, {
-        type: 'pie',
-        data: {
-            labels: ['Machine Learning', 'Image Processing', 'Data Analysis', 'Signal Processing'],
-            datasets: [{
-                label: 'Percentage',
-                data: [45, 30, 15, 10],
-                backgroundColor: [
-                    '#ff6384',
-                    '#36a2eb',
-                    '#cc65fe',
-                    '#ffce56'
-                ],
-                hoverBackgroundColor: [
-                    '#ff6384',
-                    '#36a2eb',
-                    '#cc65fe',
-                    '#ffce56'
-                ],
-                borderWidth: 2,
-                hoverOffset: 10
-            }]
+  Highcharts.chart('pie-chart-container', {
+    chart: {
+      type: 'variablepie',
+      backgroundColor: '#f5f5f5',
+      plotBackgroundColor: null,
+      plotBorderWidth: null,
+      plotShadow: false,
+      height: '500px',
+      animation: {
+        duration: 2000,
+        easing: 'easeOutBounce'
+      }
+    },
+    title: {
+      text: 'My Areas of Interest',
+      style: {
+        color: '#333',
+        fontSize: '24px',
+        fontWeight: 'bold'
+      },
+      align: 'center',
+      verticalAlign: 'middle',
+      y: 40
+    },
+    tooltip: {
+      pointFormat: '{series.name}: <b>{point.y:.2f}</b><br/>Percentage: <b>{point.percentage:.1f}%</b>'
+    },
+    plotOptions: {
+      variablepie: {
+        borderColor: null,
+        startAngle: -90,
+        endAngle: 270,
+        center: ['50%', '50%'],
+        size: '100%',
+        dataLabels: {
+          enabled: true,
+          distance: 10,
+          connectorShape: 'crookedLine',
+          style: {
+            color: '#333',
+            fontSize: '14px',
+            fontWeight: 'bold',
+            textOutline: false
+          },
+          formatter: function() {
+            return '<b>' + this.point.name + ':</b> ' + this.y + '%';
+          }
         },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    display: true,
-                    position: 'right',
-                    labels: {
-                        font: {
-                            size: 14,
-                            weight: 'bold'
-                        },
-                        boxWidth: 20,
-                        padding: 20,
-                        usePointStyle: true,
-                        pointStyle: 'circle'
-                    },
-                    onHover: function (event, legendItem) {
-                        document.getElementById('myPieChart').style.cursor = 'pointer';
-                        myPieChart.updateHoverStyle([legendItem], null, true);
-                    },
-                    onLeave: function () {
-                        document.getElementById('myPieChart').style.cursor = 'default';
-                        myPieChart.updateHoverStyle([], null, true);
-                    }
-                }
-            },
-            title: {
-                display: true,
-                text: 'My Areas of Interest',
-                font: {
-                    size: 24,
-                    weight: 'bold'
-                },
-                padding: 20
-            },
-            animation: {
-                animateRotate: true,
-                animateScale: true,
-                duration: 1500,
-                easing: 'easeInOutQuart'
+        states: {
+          hover: {
+            enabled: true,
+            halo: {
+              size: 10,
+              opacity: 0.75
             }
+          }
+        },
+        point: {
+          events: {
+            legendItemClick: function() {
+              this.slice(null);
+              return false;
+            }
+          }
+        },
+        animation: {
+          duration: 2000,
+          easing: 'easeOutBounce'
         }
-    });
-</script>
+      }
+    },
+    legend: {
+      enabled: true,
+      align: 'right',
+      layout: 'vertical',
+      verticalAlign: 'middle',
+      itemStyle: {
+        color: '#333',
+        fontSize: '14px',
+        fontWeight: 'bold'
+      },
+      labelFormatter: function() {
+        return this.name + ': ' + this.y + '%';
+      }
+    },
+    series: [{
+      name: 'Percentage',
+      minPointSize: 10,
+      innerSize: '30%',
+      data: [{
+        name: 'Machine Learning',
+        y: 45,
+        color: '#ff6384'
+      }, {
+        name: 'Image Processing',
+        y: 30,
+        color: '#36a2eb'
+      }, {
+        name: 'Data Analysis',
+        y: 15,
+        color: '#cc65fe'
+      }, {
+        name: 'Signal Processing',
+        y: 10,
+        color: '#ffce56'
+      }]
+    }]
+  });
+</script
 
 <div class="container">
                             <span class="authors">Design based on the<a
