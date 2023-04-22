@@ -736,82 +736,11 @@
 
 	
 	
-<?php
-// Check if form submitted with method "POST"
-if($_SERVER["REQUEST_METHOD"] == "POST") {
-    
-    // Set recipient email address and subject
-    $email_to = "recipient@example.com";
-    $email_subject = "New Form Submission";
-    
-    // Function to handle error messages
-    function died($error) {
-        echo "We are sorry, but there were error(s) found with the form you submitted. ";
-        echo "These errors appear below.<br /><br />";
-        echo $error."<br /><br />";
-        echo "Please go back and fix these errors.<br /><br />";
-        die();
-    }
-    
-    // Check if required form data is present
-    if(!isset($_POST['name']) || !isset($_POST['email']) || !isset($_POST['message'])) {
-        died('We are sorry, but there appears to be a problem with the form you submitted.');
-    }
-    
-    // Get form data and perform basic validation
-    $name = $_POST['name']; // required
-    $email_from = $_POST['email']; // required
-    $message = $_POST['message']; // required
-    $error_message = "";
-    
-    $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/';
-    if(!preg_match($email_exp,$email_from)) {
-        $error_message .= 'The Email Address you entered does not appear to be valid.<br />';
-    }
-    
-    $string_exp = "/^[A-Za-z .'-]+$/";
-    if(!preg_match($string_exp,$name)) {
-        $error_message .= 'The Name you entered does not appear to be valid.<br />';
-    }
-    
-    if(strlen($message) < 2) {
-        $error_message .= 'The Message you entered does not appear to be valid.<br />';
-    }
-    
-    // If errors present, display them and terminate script
-    if(strlen($error_message) > 0) {
-        died($error_message);
-    }
-    
-    // If all form data is valid, construct email message and headers, and send email
-    $email_message = "Form details below.\n\n";
-    function clean_string($string) {
-        $bad = array("content-type","bcc:","to:","cc:","href");
-        return str_replace($bad,"",$string);
-    }
-    
-    $email_message .= "Name: ".clean_string($name)."\n";
-    $email_message .= "Email: ".clean_string($email_from)."\n";
-    $email_message .= "Message: ".clean_string($message)."\n";
-    
-    // create email headers
-    $headers = 'From: '.$email_from."\r\n".
-        'Reply-To: '.$email_from."\r\n" .
-        'X-Mailer: PHP/' . phpversion();
-    
-    @mail($email_to, $email_subject, $email_message, $headers);
-    
-    // Display success message to user
-    echo "Thank you for contacting us. We will be in touch with you very soon.";
-}
-?>
-
-
 <section id="contact">
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-        <h2>Contact Me</h2>
+        <h2>Contact with Me</h2>
         <form method="post" action="send_email.php">
           <div class="form-group">
             <label for="name">Full Name</label>
@@ -825,12 +754,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             <label for="message">Message</label>
             <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
           </div>
-          <button type="submit" class="btn btn-default">Send</button>
+          <button type="submit" class="btn btn-primary">Send</button>
         </form>
       </div>
     </div>
   </div>
 </section>
+
 
 
 	
