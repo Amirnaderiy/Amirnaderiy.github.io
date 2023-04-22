@@ -650,7 +650,7 @@
                     <canvas id="myPieChart"></canvas>
                 </div>
                 <div class="portfolio">
-                    <h2 class="chart-title">My Areas of Interest</h2>
+                    <h2>My Interests</h2>
                 </div>
             </div>
         </div>
@@ -668,10 +668,10 @@
                 label: 'Percentage',
                 data: [45, 30, 15, 10],
                 backgroundColor: [
-                    'rgba(255, 82, 82, 0.9)',
-                    'rgba(255, 143, 0, 0.9)',
-                    'rgba(255, 235, 59, 0.9)',
-                    'rgba(76, 175, 80, 0.9)'
+                    '#FF6B6B',
+                    '#FFE66D',
+                    '#7BCDC8',
+                    '#F7AEDF'
                 ],
                 borderColor: '#fff',
                 borderWidth: 2
@@ -681,31 +681,15 @@
             responsive: true,
             maintainAspectRatio: false,
             legend: {
+                display: true,
                 position: 'right',
-                align: 'start',
+                align: 'center',
                 labels: {
                     fontColor: '#333',
-                    fontSize: 14,
-                    padding: 20,
-                    boxWidth: 15,
-                    fontFamily: "'Open Sans', sans-serif",
+                    fontSize: 16,
+                    boxWidth: 25,
                     usePointStyle: true,
-                    generateLabels: function(chart) {
-                        var data = chart.data;
-                        if (data.labels.length && data.datasets.length) {
-                            return data.labels.map(function(label, index) {
-                                var dataset = data.datasets[0];
-                                var backgroundColor = dataset.backgroundColor[index];
-                                return {
-                                    text: label,
-                                    fillStyle: backgroundColor,
-                                    hidden: isNaN(dataset.data[index]) || dataset.data[index] === 0,
-                                    index: index
-                                };
-                            });
-                        }
-                        return [];
-                    }
+                    padding: 25
                 }
             },
             title: {
@@ -713,26 +697,26 @@
                 text: 'My Areas of Interest',
                 fontColor: '#333',
                 fontSize: 24,
-                padding: 20,
-                fontFamily: "'Open Sans', sans-serif"
+                padding: 20
             },
             animation: {
                 animateScale: true,
                 animateRotate: true
+            },
+            tooltips: {
+                enabled: true,
+                mode: 'single',
+                callbacks: {
+                    label: function(tooltipItem, data) {
+                        var label = data.labels[tooltipItem.index];
+                        var value = data.datasets[0].data[tooltipItem.index];
+                        return label + ': ' + value + '%';
+                    }
+                }
             }
         }
     });
 </script>
-
-<style>
-    .chart-title {
-        font-family: 'Open Sans', sans-serif;
-        font-weight: 700;
-        font-size: 36px;
-        color: #333;
-        margin-bottom: 20px;
-    }
-</style>
 
 <div class="container">
                             <span class="authors">Design based on the<a
