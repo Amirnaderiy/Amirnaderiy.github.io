@@ -645,12 +645,22 @@
 <section id="teaching-area" class="sections">
     <div class="container">
         <div class="row">
-            <div class="col-sm-12 col-sm-12 col-xs-12">
+            <div class="col-sm-6 col-sm-6 col-xs-12">
                 <div class="pie-chart-container">
                     <canvas id="myPieChart"></canvas>
                 </div>
-                <div class="portfolio">
-                    <h2 class="chart-title">My Interests</h2>
+            </div>
+            <div class="col-sm-6 col-sm-6 col-xs-12">
+                <div class="legend-container">
+                    <h2>My Interests</h2>
+                    <div class="legend">
+                        <ul>
+                            <li><span style="background-color:#ff6384"></span>Machine Learning - 45%</li>
+                            <li><span style="background-color:#36a2eb"></span>Image Processing - 30%</li>
+                            <li><span style="background-color:#cc65fe"></span>Data Analysis - 15%</li>
+                            <li><span style="background-color:#ffce56"></span>Signal Processing - 10%</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -695,18 +705,10 @@
                             size: 14,
                             weight: 'bold'
                         },
-                        boxWidth: 30,
+                        boxWidth: 20,
                         padding: 20,
                         usePointStyle: true,
                         pointStyle: 'circle'
-                    },
-                    onHover: function (event, legendItem) {
-                        document.getElementById('myPieChart').style.cursor = 'pointer';
-                        myPieChart.updateHoverStyle([legendItem], null, true);
-                    },
-                    onLeave: function () {
-                        document.getElementById('myPieChart').style.cursor = 'default';
-                        myPieChart.updateHoverStyle([], null, true);
                     }
                 }
             },
@@ -714,16 +716,16 @@
                 display: true,
                 text: 'My Areas of Interest',
                 font: {
-                    size: 32,
+                    size: 24,
                     weight: 'bold'
                 },
-                padding: 30,
+                padding: 20,
                 position: 'top'
             },
             animation: {
                 animateRotate: true,
                 animateScale: true,
-                duration: 1500,
+                duration: 2000,
                 easing: 'easeInOutQuart'
             }
         }
