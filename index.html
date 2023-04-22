@@ -668,51 +668,62 @@
                 label: 'Percentage',
                 data: [45, 30, 15, 10],
                 backgroundColor: [
-                    '#FF6B6B',
-                    '#FFE66D',
-                    '#7BCDC8',
-                    '#F7AEDF'
+                    '#ff6384',
+                    '#36a2eb',
+                    '#cc65fe',
+                    '#ffce56'
                 ],
-                borderColor: '#fff',
-                borderWidth: 2
+                hoverBackgroundColor: [
+                    '#ff6384',
+                    '#36a2eb',
+                    '#cc65fe',
+                    '#ffce56'
+                ],
+                borderWidth: 2,
+                hoverOffset: 10
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
-            legend: {
-                display: true,
-                position: 'right',
-                align: 'center',
-                labels: {
-                    fontColor: '#333',
-                    fontSize: 16,
-                    boxWidth: 25,
-                    usePointStyle: true,
-                    padding: 25
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'right',
+                    labels: {
+                        font: {
+                            size: 14,
+                            weight: 'bold'
+                        },
+                        boxWidth: 20,
+                        padding: 20,
+                        usePointStyle: true,
+                        pointStyle: 'circle'
+                    },
+                    onHover: function (event, legendItem) {
+                        document.getElementById('myPieChart').style.cursor = 'pointer';
+                        myPieChart.updateHoverStyle([legendItem], null, true);
+                    },
+                    onLeave: function () {
+                        document.getElementById('myPieChart').style.cursor = 'default';
+                        myPieChart.updateHoverStyle([], null, true);
+                    }
                 }
             },
             title: {
                 display: true,
                 text: 'My Areas of Interest',
-                fontColor: '#333',
-                fontSize: 24,
+                font: {
+                    size: 24,
+                    weight: 'bold'
+                },
                 padding: 20
             },
             animation: {
+                animateRotate: true,
                 animateScale: true,
-                animateRotate: true
-            },
-            tooltips: {
-                enabled: true,
-                mode: 'single',
-                callbacks: {
-                    label: function(tooltipItem, data) {
-                        var label = data.labels[tooltipItem.index];
-                        var value = data.datasets[0].data[tooltipItem.index];
-                        return label + ': ' + value + '%';
-                    }
-                }
+                duration: 1500,
+                easing: 'easeInOutQuart'
             }
         }
     });
