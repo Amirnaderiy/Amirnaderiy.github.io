@@ -650,7 +650,7 @@
                     <canvas id="myPieChart"></canvas>
                 </div>
                 <div class="portfolio">
-                    <h2><b>My Interests</b></h2>
+                    <h2 class="chart-title">My Areas of Interest</h2>
                 </div>
             </div>
         </div>
@@ -668,10 +668,10 @@
                 label: 'Percentage',
                 data: [45, 30, 15, 10],
                 backgroundColor: [
-                    'rgba(255, 51, 0, 0.7)',
-                    'rgba(255, 153, 0, 0.7)',
-                    'rgba(255, 204, 0, 0.7)',
-                    'rgba(255, 255, 0, 0.7)',
+                    'rgba(255, 82, 82, 0.9)',
+                    'rgba(255, 143, 0, 0.9)',
+                    'rgba(255, 235, 59, 0.9)',
+                    'rgba(76, 175, 80, 0.9)'
                 ],
                 borderColor: '#fff',
                 borderWidth: 2
@@ -682,11 +682,30 @@
             maintainAspectRatio: false,
             legend: {
                 position: 'right',
+                align: 'start',
                 labels: {
                     fontColor: '#333',
                     fontSize: 14,
                     padding: 20,
-                    boxWidth: 20
+                    boxWidth: 15,
+                    fontFamily: "'Open Sans', sans-serif",
+                    usePointStyle: true,
+                    generateLabels: function(chart) {
+                        var data = chart.data;
+                        if (data.labels.length && data.datasets.length) {
+                            return data.labels.map(function(label, index) {
+                                var dataset = data.datasets[0];
+                                var backgroundColor = dataset.backgroundColor[index];
+                                return {
+                                    text: label,
+                                    fillStyle: backgroundColor,
+                                    hidden: isNaN(dataset.data[index]) || dataset.data[index] === 0,
+                                    index: index
+                                };
+                            });
+                        }
+                        return [];
+                    }
                 }
             },
             title: {
@@ -694,43 +713,26 @@
                 text: 'My Areas of Interest',
                 fontColor: '#333',
                 fontSize: 24,
-                padding: 20
+                padding: 20,
+                fontFamily: "'Open Sans', sans-serif"
             },
             animation: {
                 animateScale: true,
                 animateRotate: true
-            },
-            onHover: function(event, chartElement) {
-                event.target.style.cursor = chartElement[0] ? 'pointer' : 'default';
-            },
-            onClick: function(e) {
-                var activeElement = myPieChart.getElementAtEvent(e)[0];
-                if(activeElement) {
-                    var index = activeElement._index;
-                    var data = myPieChart.data.datasets[0].data;
-                    var backgroundColor = myPieChart.data.datasets[0].backgroundColor;
-                    var hoverBackgroundColor = myPieChart.data.datasets[0].hoverBackgroundColor;
-                    var sliceOffset = 6;
-                    for(var i=0; i<data.length; i++) {
-                        if(i == index) {
-                            backgroundColor[i] = 'rgba(255, 51, 0, 0.9)';
-                            hoverBackgroundColor[i] = 'rgba(255, 51, 0, 1)';
-                            myPieChart.data.labels[i] = myPieChart.data.labels[i] + ' ' + sliceOffset + '%';
-                            data[i] += sliceOffset;
-                        } else {
-                            backgroundColor[i] = 'rgba(255, 204, 0, 0.7)';
-                            hoverBackgroundColor[i] = 'rgba(255, 204, 0, 1)';
-                        }
-                    }
-                    myPieChart.update();
-                }
-            },
-            tooltips: {
-                enabled: false
             }
         }
     });
 </script>
+
+<style>
+    .chart-title {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 700;
+        font-size: 36px;
+        color: #333;
+        margin-bottom: 20px;
+    }
+</style>
 
 <div class="container">
                             <span class="authors">Design based on the<a
