@@ -650,7 +650,7 @@
                     <canvas id="myPieChart"></canvas>
                 </div>
                 <div class="portfolio">
-                    <h2 style="font-weight: bold; font-size: 28px; text-align: center;">My Interests</h2>
+                    <h2><b>My Interests</b></h2>
                 </div>
             </div>
         </div>
@@ -668,10 +668,10 @@
                 label: 'Percentage',
                 data: [45, 30, 15, 10],
                 backgroundColor: [
-                    '#1F77B4',
-                    '#FF7F0E',
-                    '#2CA02C',
-                    '#D62728'
+                    'rgba(255, 51, 0, 0.7)',
+                    'rgba(255, 153, 0, 0.7)',
+                    'rgba(255, 204, 0, 0.7)',
+                    'rgba(255, 255, 0, 0.7)',
                 ],
                 borderColor: '#fff',
                 borderWidth: 2
@@ -686,8 +686,7 @@
                     fontColor: '#333',
                     fontSize: 14,
                     padding: 20,
-                    boxWidth: 20,
-                    fontFamily: 'Helvetica Neue,Helvetica,Arial,sans-serif'
+                    boxWidth: 20
                 }
             },
             title: {
@@ -695,12 +694,39 @@
                 text: 'My Areas of Interest',
                 fontColor: '#333',
                 fontSize: 24,
-                padding: 20,
-                fontFamily: 'Helvetica Neue,Helvetica,Arial,sans-serif'
+                padding: 20
             },
             animation: {
                 animateScale: true,
                 animateRotate: true
+            },
+            onHover: function(event, chartElement) {
+                event.target.style.cursor = chartElement[0] ? 'pointer' : 'default';
+            },
+            onClick: function(e) {
+                var activeElement = myPieChart.getElementAtEvent(e)[0];
+                if(activeElement) {
+                    var index = activeElement._index;
+                    var data = myPieChart.data.datasets[0].data;
+                    var backgroundColor = myPieChart.data.datasets[0].backgroundColor;
+                    var hoverBackgroundColor = myPieChart.data.datasets[0].hoverBackgroundColor;
+                    var sliceOffset = 6;
+                    for(var i=0; i<data.length; i++) {
+                        if(i == index) {
+                            backgroundColor[i] = 'rgba(255, 51, 0, 0.9)';
+                            hoverBackgroundColor[i] = 'rgba(255, 51, 0, 1)';
+                            myPieChart.data.labels[i] = myPieChart.data.labels[i] + ' ' + sliceOffset + '%';
+                            data[i] += sliceOffset;
+                        } else {
+                            backgroundColor[i] = 'rgba(255, 204, 0, 0.7)';
+                            hoverBackgroundColor[i] = 'rgba(255, 204, 0, 1)';
+                        }
+                    }
+                    myPieChart.update();
+                }
+            },
+            tooltips: {
+                enabled: false
             }
         }
     });
