@@ -646,11 +646,11 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-sm-12 col-xs-12">
-                <div class="portfolio">
-                    <h2>My Interests</h2>
-                </div>
                 <div class="pie-chart-container">
                     <canvas id="myPieChart"></canvas>
+                </div>
+                <div class="portfolio">
+                    <h2>My Interests</h2>
                 </div>
             </div>
         </div>
@@ -668,18 +668,13 @@
                 label: 'Percentage',
                 data: [45, 30, 15, 10],
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.5)',
-                    'rgba(54, 162, 235, 0.5)',
-                    'rgba(255, 206, 86, 0.5)',
-                    'rgba(75, 192, 192, 0.5)'
+                    '#4e73df',
+                    '#1cc88a',
+                    '#36b9cc',
+                    '#f6c23e'
                 ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)'
-                ],
-                borderWidth: 1
+                borderColor: '#fff',
+                borderWidth: 2
             }]
         },
         options: {
@@ -687,10 +682,19 @@
             maintainAspectRatio: false,
             legend: {
                 position: 'right',
+                labels: {
+                    fontColor: '#333',
+                    fontSize: 14,
+                    padding: 20,
+                    boxWidth: 20
+                }
             },
             title: {
                 display: true,
-                text: 'Areas of Expertise'
+                text: 'My Areas of Interest',
+                fontColor: '#333',
+                fontSize: 24,
+                padding: 20
             },
             animation: {
                 animateScale: true,
