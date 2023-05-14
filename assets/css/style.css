@@ -402,7 +402,7 @@ input:-ms-input-placeholder {
     padding-top: 15px;
 }
 .mainmenu .brand-bg{
-	background: #fa5c65;
+	background: #f52222;
     padding: 20px 10px 10px;
     height: 70px;
     border-bottom-left-radius: 10px;
@@ -413,16 +413,16 @@ input:-ms-input-placeholder {
 .mainmenu .navbar-nav li a{
 	text-transform:uppercase;
 	font-size:14px;
-	color:#263742;
+	color:#f7ded7;
 }
 
 .mainmenu.menu-bg{
-	background:#c8ced0;
-	color:#c8ced0;
+	background:#f7ded7;
+	color:#f7ded7;
 }
 
 .mainmenu .navbar-nav li a i{
-	color:#fa5c65;
+	color:#f52222;
 	font-size:18px;
 	transition:.3s ease-in-out;
 }
@@ -486,7 +486,7 @@ input:-ms-input-placeholder {
 .promotion a h4{
 	text-transform:uppercase;
 	font-size:15px;
-	color:#fa5c65;
+	color:#f52222;
 }
 .promotion a h4:hover{
 	color:pink;
@@ -513,13 +513,13 @@ input:-ms-input-placeholder {
 }
 .portfolio h1 i{
 	font-size:5px;
-	color:#fa5c65;
+	color:#f52222;
 }
 
 .portfolio a h4{
 	text-transform:uppercase;
 	font-size:14px;
-	color:#fa5c65;
+	color:#f52222;
 	font-family: 'montserratregular';
 }
 .portfolio a h4:hover{
@@ -548,7 +548,7 @@ input:-ms-input-placeholder {
 
 .team-heading h1 i{
 	font-size:7px;
-	color:#fa5c65;
+	color:#f52222;
 }
 .team-heading h5{
 	font-size:15px;
@@ -567,7 +567,7 @@ input:-ms-input-placeholder {
 }
 .team .team-info h5{
 	font-size:14px;
-	color:#fa5c65;
+	color:#f52222;
 	margin-bottom:0;
 	font-weight:bold;
 }
@@ -583,7 +583,7 @@ input:-ms-input-placeholder {
 .team-more a h4{
 	text-transform:uppercase;
 	font-size:15px;
-	color:#fa5c65;
+	color:#f52222;
 }
 .team-more a h4:hover{
 	color:pink;
@@ -613,7 +613,7 @@ input:-ms-input-placeholder {
 		width:40px;
 		height:40px;
 		text-align:center;
-		color:#fa5c65;
+		color:#f52222;
 		font-size:30px;
 		background:#c8cfd0;
 		position:fixed;
