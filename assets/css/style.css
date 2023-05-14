@@ -413,7 +413,7 @@ input:-ms-input-placeholder {
 .mainmenu .navbar-nav li a{
 	text-transform:uppercase;
 	font-size:14px;
-	color:#f7ded7;
+	color:#314a5b;
 }
 
 .mainmenu.menu-bg{
@@ -433,7 +433,7 @@ input:-ms-input-placeholder {
 
 .home-bg .header-details{
 	padding-top:220px;
-	color:#314a5b;
+	color:#f7ded7;
 }
 .home-bg .header-details h1{
 	text-transform:uppercase;
@@ -448,7 +448,7 @@ input:-ms-input-placeholder {
 }
 .home-bg .header-details p{
 	font-size:20px;
-	color:#314a5b;
+	color:#f7ded7;
 }
 
 .home-bg .header-details button{
@@ -480,7 +480,7 @@ input:-ms-input-placeholder {
 }
 .promotion h1 i{
 	font-size:5px;
-	color:#fa5c65;
+	color:#f52222;
 }
 
 .promotion a h4{
