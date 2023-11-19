@@ -41,186 +41,9 @@
     experience.</p>
 <![endif]-->
 
-<div class="loader">
-  <div class="dots">
-  	<div class="dot"></div>
-  	<div class="dot"></div>
-  </div>
-  <div class="dots">
-  	<div class="dot"></div>
-  	<div class="dot"></div>
-  </div>
-  <div class="dots">
-  	<div class="dot"></div>
-  	<div class="dot"></div>
-  </div>
-  <div class="dots">
-  	<div class="dot"></div>
-  	<div class="dot"></div>
-  </div>
-  <div class="dots">
-  	<div class="dot"></div>
-  	<div class="dot"></div>
-  </div>
-  <div class="dots">
-  	<div class="dot"></div>
-  	<div class="dot"></div>
-  </div>
-  <div class="dots">
-  	<div class="dot"></div>
-  	<div class="dot"></div>
-  </div>
-  <div class="dots">
-  	<div class="dot"></div>
-  	<div class="dot"></div>
-  </div>
-  <div class="dots">
-  	<div class="dot"></div>
-  	<div class="dot"></div>
-  </div>
-  <div class="dots">
-  	<div class="dot"></div>
-  	<div class="dot"></div>
-  </div>
+<div class='preloader'>
+    <div class='loaded'>&nbsp;</div>
 </div>
-	
-<style>
-	  body {
-	  text-align: center;
-	  background-color: #eee;
-	}
-
-	* {
-	  -webkit-box-sizing: border-box;
-	     -moz-box-sizing: border-box;
-		  box-sizing: border-box;
-	}
-
-	/* The loader */
-	.loader {
-	  position: absolute;
-	  top: 50%;
-	  left: 50%;
-
-	  width: 200px;
-	  height: 200px;
-
-	  margin-top: -100px;
-	  margin-left: -100px;
-	}
-
-	/* The dots */
-	.dots {
-	  position: absolute;
-	  top: 50%;
-	  left: 50%;
-
-	  width: 100px;
-	  height: 100px;
-
-	  border: 1px solid transparent;
-	  border-radius: 100px;
-
-	  margin-top: -50px;
-	  margin-left: -50px;
-
-	  transform: translateY(-100px);
-
-	  animation: dots 6s cubic-bezier(.5,.15,.5,.85) infinite;
-	}
-
-	.dots:nth-child(2) { transform: rotate(36deg) translateY(-100px); }
-	.dots:nth-child(3) { transform: rotate(72deg) translateY(-100px); }
-	.dots:nth-child(4) { transform: rotate(108deg) translateY(-100px); }
-	.dots:nth-child(5) { transform: rotate(144deg) translateY(-100px); }
-	.dots:nth-child(6) { transform: rotate(180deg) translateY(-100px); }
-	.dots:nth-child(7) { transform: rotate(216deg) translateY(-100px); }
-	.dots:nth-child(8) { transform: rotate(252deg) translateY(-100px); }
-	.dots:nth-child(9) { transform: rotate(288deg) translateY(-100px); }
-	.dots:nth-child(10) { transform: rotate(324deg) translateY(-100px); }
-
-	@keyframes dots {
-	  0%, 10%, 50%, 65%, 100% {
-	    border-color: transparent;
-	  }
-	  5% {
-	    border-color: rgba(30, 63, 87, 0.2);
-	  }
-	  55% {
-	    border-color: rgba(30, 63, 87, 0.3);
-	  }
-	}
-
-	/* The dot */
-	.dot {
-	  position: absolute;
-	  top: 50%;
-	  left: 50%;
-
-	  width: 20px;
-	  height: 20px;
-
-	  border-radius: 20px;
-
-	  margin-top: -10px;
-	  margin-left: -10px;
-
-	  background-color: #fc4700;
-
-	  transform: translateX(-50px);
-
-	  animation: dot 6s cubic-bezier(.5,.15,.5,.85) infinite;
-	}
-
-	.dot:nth-child(2) {
-	  transform: translateX(50px);
-
-	  animation-name: dot2;
-	}
-
-	.dots:nth-child(2), .dots:nth-child(2) .dot { animation-delay: 300ms; }
-	.dots:nth-child(3), .dots:nth-child(3) .dot { animation-delay: 600ms; }
-	.dots:nth-child(4), .dots:nth-child(4) .dot { animation-delay: 900ms; }
-	.dots:nth-child(5), .dots:nth-child(5) .dot { animation-delay: 1200ms; }
-	.dots:nth-child(6), .dots:nth-child(6) .dot { animation-delay: 1500ms; }
-	.dots:nth-child(7), .dots:nth-child(7) .dot { animation-delay: 1800ms; }
-	.dots:nth-child(8), .dots:nth-child(8) .dot { animation-delay: 2100ms; }
-	.dots:nth-child(9), .dots:nth-child(9) .dot { animation-delay: 2400ms; }
-	.dots:nth-child(10), .dots:nth-child(10) .dot { animation-delay: 2700ms; }
-
-	@keyframes dot {
-	  0% {
-	    transform: rotate(0) translateX(-50px);
-	    background-color: #fcad00;
-	  }
-	  10%, 50% {
-	    transform: rotate(180deg) translateX(-50px);
-	    background-color: #fc7600;
-	  }
-	  60% {
-	    transform: rotate(360deg) translateX(-50px);
-	    background-color: #ff3300;
-	  }
-	}
-
-	@keyframes dot2 {
-	  0% {
-	    transform: rotate(0) translateX(50px);
-	    background-color: #f52222;
-	  }
-	  10%, 50% {
-	    transform: rotate(180deg) translateX(50px);
-	    background-color: #fc4e4e;
-	  }
-	  60% {
-	    transform: rotate(360deg) translateX(50px);
-	    background-color: #ff0000;
-	  } 
-	}
-
-<style>
-	
-	
 	
 	
 <nav class="mainmenu navbar navbar-default navbar-fixed-top">
@@ -289,7 +112,6 @@
 
             <div class="col-sm-12 col-sm-12 col-xs-12">
                 <div class="aboutmee">
-		      <h2 class="section-title">About Me</h2>
 
                     <p> I'm Amir Reza Naderi. Born and raised in Tehran, I have a Master's degree in Biomedical Engineering from Islamic Azad University Science and Research Branch. My research interests lie in the fields of Machine Learning and Computer Vision. 
                       </p>
@@ -894,8 +716,8 @@
 </style>
 	
 
-<a name="interests" id='interests'></a>
-<section id="interests-area" class="sections">
+<a name="Teaching" id='Teaching'></a>
+<section id="teaching-area" class="sections">
     <div class="container">
         <div class="row">
             <div class="col-sm-6 col-sm-6 col-xs-12">
@@ -989,332 +811,108 @@
 
 	
 	
-<section id="contact">
-  
-  <h1 class="section-header">Contact</h1>
-  
-  <div class="contact-wrapper">
-  
-  <!-- Left contact page --> 
-    
-    <form id="contact-form" class="form-horizontal" role="form">
-       
-      <div class="form-group">
-        <div class="col-sm-12">
-          <input type="text" class="form-control" id="name" placeholder="NAME" name="name" value="" required>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <div class="col-sm-12">
-          <input type="email" class="form-control" id="email" placeholder="EMAIL" name="email" value="" required>
-        </div>
-      </div>
-
-      <textarea class="form-control" rows="10" placeholder="MESSAGE" name="message" required></textarea>
-      
-      <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
-        <div class="alt-send-button">
-          <i class="fa fa-paper-plane"></i><span class="send-text">SEND</span>
-        </div>
-      
-      </button>
-      
-    </form>
-    
-  <!-- Left contact page --> 
-    
-      <div class="direct-contact-container">
-
-        <ul class="contact-list">
-          <li class="list-item"><i class="fa fa-map-marker fa-2x"><span class="contact-text place">Karaj, IRAN</span></i></li>
-          
-          <li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone"><a href="tel:98-919-716-6605" title="Give me a call">(212) 555-2368</a></span></i></li>
-          
-          <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a href="mailto:#" title="Send me an email">naderi.bme@gmail.com</a></span></i></li>
-          
-        </ul>
-
-        <hr>
-        <ul class="social-media-list">
-          <li><a href="https://github.com/Amirnaderiy/" target="_blank" class="contact-icon">
-            <i class="fa fa-github" aria-hidden="true"></i></a>
-          </li>
-          <li><a href="facebook.com/Amirnaderiy" target="_blank" class="contact-icon">
-            <i class="fa fa-facebook" aria-hidden="true"></i></a>
-          </li>
-          <li><a href="https://linkedin.com/in/AmirnaderiY" target="" class="contact-icon">
-            <i class="fa fa-linkedin" aria-hidden="true"></i></a>
-          </li>
-          <li><a href=instagram.com/Amirnaderiy" target="_blank" class="contact-icon">
-            <i class="fa fa-instagram" aria-hidden="true"></i></a>
-          </li>       
-        </ul>
-        <hr>
-
-        <div class="copyright">&copy; ALL OF THE RIGHTS RESERVED</div>
-
-      </div>
-    
-  </div>
-  
-</section>  
+<section class="contact">
+  <h2>Contact Us</h2>
+  <ul>
+    <li>
+      <a class="github" href="#">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <i class="fa fa-github" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li>
+      <a class="telegram" href="#">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <i class="fa fa-telegram" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li>
+      <a class="instagram" href="#">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook" href="#">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</section>
 
 <style>
-	body {
+	.contact {
+	  text-align: center;
+	}
+
+	.contact h2 {
+	  margin-bottom: 20px;
+	}
+
+	.contact ul {
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
 	  margin: 0;
 	  padding: 0;
-	  background-color: #fefefe;
-	  padding-bottom: 100px;
 	}
 
-	#contact {
-	  width: 100%;
-	  height: 100%;
+	.contact li {
+	  list-style: none;
 	}
 
-	.section-header {
-	  text-align: center;
-	  margin: 0 auto;
-	  padding: 40px 0;
-	  font: 300 60px 'Oswald', sans-serif;
-	  color: #333232;
-	  text-transform: uppercase;
-	  letter-spacing: 6px;
-	}
-
-	.contact-wrapper {
-	  display: flex;
-	  flex-direction: row;
-	  justify-content: space-between;
-	  margin: 0 auto;
-	  padding: 20px;
-	  position: relative;
-	  max-width: 840px;
-	}
-
-	/* Left contact page */
-	.form-horizontal {
-	  /*float: left;*/
-	  max-width: 400px;
-	  font-family: 'Lato';
-	  font-weight: 400;
-	}
-
-	.form-control, 
-	textarea {
-	  max-width: 400px;
-	  background-color: #000;
-	  color: #fff;
-	  letter-spacing: 1px;
-	}
-
-	.send-button {
-	  margin-top: 15px;
-	  height: 34px;
-	  width: 400px;
-	  overflow: hidden;
-	  transition: all .2s ease-in-out;
-	}
-
-	.alt-send-button {
-	  width: 400px;
-	  height: 34px;
-	  transition: all .2s ease-in-out;
-	}
-
-	.send-text {
+	.contact a {
 	  display: block;
-	  margin-top: 10px;
-	  font: 700 12px 'Lato', sans-serif;
-	  letter-spacing: 2px;
-	}
-
-	.alt-send-button:hover {
-	  transform: translate3d(0px, -29px, 0px);
-	}
-
-	/* Begin Right Contact Page */
-	.direct-contact-container {
-	  max-width: 400px;
-	}
-
-	/* Location, Phone, Email Section */
-	.contact-list {
-	  list-style-type: none;
-	  margin-left: -30px;
-	  padding-right: 20px;
-	}
-
-	.list-item {
-	  line-height: 4;
-	  color: #aaa;
-	}
-
-	.contact-text {
-	  font: 300 18px 'Lato', sans-serif;
-	  letter-spacing: 1.9px;
-	  color: #333232;
-	}
-
-	.place {
-	  margin-left: 62px;
-	}
-
-	.phone {
-	  margin-left: 56px;
-	}
-
-	.gmail {
-	  margin-left: 53px;
-	}
-
-	.contact-text a {
-	  color: #333232;
-	  text-decoration: none;
-	  transition-duration: 0.2s;
-	}
-
-	.contact-text a:hover {
-	  color: #333232;
-	  text-decoration: none;
-	}
-
-
-	/* Social Media Icons */
-	.social-media-list {
 	  position: relative;
-	  font-size: 22px;
+	  width: 100px;
+	  height: 100px;
+	  line-height: 100px;
+	  font-size: 40px;
 	  text-align: center;
-	  width: 100%;
-	  margin: 0 auto;
-	  padding: 0;
+	  text-decoration: none;
+	  margin: 0 30px;
+	  transition: .5s;
 	}
 
-	.social-media-list li a {
-	  color: #fff;
+	.contact a:hover {
+	  transform: translateY(-5px);
 	}
 
-	.social-media-list li {
-	  position: relative; 
-	  display: inline-block;
-	  height: 60px;
-	  width: 60px;
-	  margin: 10px 3px;
-	  line-height: 60px;
-	  border-radius: 50%;
-	  color: #fff;
-	  background-color: rgb(27,27,27);
-	  cursor: pointer; 
-	  transition: all .2s ease-in-out;
+	.contact .github:hover i {
+	  color: #171515;
 	}
 
-	.social-media-list li:after {
-	  content: '';
+	.contact .telegram:hover i {
+	  color: #1da1f2;
+	}
+
+	.contact .instagram:hover i {
+	  color: #c32aa3;
+	}
+
+	.contact .facebook:hover i {
+	  color: #3b5998;
+	}
+
+	.contact span {
 	  position: absolute;
-	  top: 0;
-	  left: 0;
-	  width: 60px;
-	  height: 60px;
-	  line-height: 60px;
-	  border-radius: 50%;
-	  opacity: 0;
-	  box-shadow: 0 0 0 1px #fff;
-	  transition: all .2s ease-in-out;
-	}
-
-	.social-media-list li:hover {
-	  background-color: #333232; 
-	}
-
-	.social-media-list li:hover:after {
-	  opacity: 1;  
-	  transform: scale(1.12);
-	  transition-timing-function: cubic-bezier(0.37,0.74,0.15,1.65);
-	}
-
-	.social-media-list li:hover a {
-	  color: #333232;
-	}
-
-	.copyright {
-	  font: 200 14px 'Oswald', sans-serif;
-	  color: #333232;
-	  letter-spacing: 1px;
-	  text-align: center;
-	}
-
-	hr {
-	  border-color: rgba(255,255,255,.6);
-	}
-
-	/* Begin Media Queries*/
-	@media screen and (max-width: 850px) {
-	  .contact-wrapper {
-	    display: flex;
-	    flex-direction: column;
-	  }
-	  .direct-contact-container, .form-horizontal {
-	    margin: 0 auto;
-	  }  
-
-	  .direct-contact-container {
-	    margin-top: 60px;
-	    max-width: 300px;
-	  }    
-	  .social-media-list li {
-	    height: 60px;
-	    width: 60px;
-	    line-height: 60px;
-	  }
-	  .social-media-list li:after {
-	    width: 60px;
-	    height: 60px;
-	    line-height: 60px;
-	  }
-	}
-
-	@media screen and (max-width: 569px) {
-
-	  .direct-contact-container, .form-wrapper {
-	    float: none;
-	    margin: 0 auto;
-	  }  
-	  .form-control, textarea {
-
-	    margin: 0 auto;
-	  }
-
-
-	  .name, .email, textarea {
-	    width: 280px;
-	  } 
-
-	  .direct-contact-container {
-	    margin-top: 60px;
-	    max-width: 280px;
-	  }  
-	  .social-media-list {
-	    left: 0;
-	  }
-	  .social-media-list li {
-	    height: 55px;
-	    width: 55px;
-	    line-height: 55px;
-	    font-size: 2rem;
-	  }
-	  .social-media-list li:after {
-	    width: 55px;
-	    height: 55px;
-	    line-height: 55px;
-	  }
-
-	}
-
-	@media screen and (max-width: 410px) {
-	  .send-button {
-	    width: 99%;
-	  }
+	  left: 50%;
+	  bottom: -30px;
+	  transform: translateX(-50%);
+	  white-space: nowrap;
 	}
 </style>
 
